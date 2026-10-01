@@ -1,0 +1,77 @@
+.diameter-input__field {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --background: transparent;
+  --border-color: var(--atelier-border);
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.diameter-input__field ion-label {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.03em;
+  color: var(--atelier-ink) !important;
+  margin-bottom: 0.25rem;
+}
+
+.diameter-input__field ion-input {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  --padding-top: 0.35rem;
+  --padding-bottom: 0.5rem;
+}
+
+.diameter-input__unit {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--atelier-teal);
+  align-self: flex-end;
+  padding-bottom: 0.75rem;
+}
+
+.diameter-input__error p {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  font-family: var(--font-ui);
+}
+
+.diameter-input__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1.2rem;
+}
+
+/* Primario: Consultar talla */
+.diameter-input__actions ion-button:first-child {
+  --background: var(--atelier-ink);
+  --background-activated: var(--ion-color-primary-shade);
+  --background-hover: var(--ion-color-primary-tint);
+  --color: #ffffff;
+  --box-shadow: 0 3px 12px rgba(31, 51, 71, 0.28);
+  font-weight: 700;
+}
+
+/* Secundario: Limpiar */
+.diameter-input__actions ion-button[fill='outline'] {
+  --border-color: rgba(100, 116, 139, 0.55);
+  --color: var(--ion-color-medium-shade);
+  --border-width: 1.5px;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .diameter-input__actions {
+    gap: 0.75rem;
+    margin-top: 1.35rem;
+  }
+
+  .diameter-input__field ion-input {
+    font-size: 1.35rem;
+  }
+}

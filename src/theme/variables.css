@@ -1,0 +1,156 @@
+/* Identidad atelier / orfebrería contemporánea — Tallas de Anillos */
+:root {
+  /* Tinta slate profunda */
+  --ion-color-primary: #1f3347;
+  --ion-color-primary-rgb: 31, 51, 71;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #1b2d3e;
+  --ion-color-primary-tint: #354759;
+
+  /* Teal metálico sobrio */
+  --ion-color-secondary: #0f766e;
+  --ion-color-secondary-rgb: 15, 118, 110;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #0d685f;
+  --ion-color-secondary-tint: #27847d;
+
+  --ion-color-success: #1f7a4d;
+  --ion-color-success-rgb: 31, 122, 77;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #1b6b44;
+  --ion-color-success-tint: #35875f;
+
+  --ion-color-warning: #b45309;
+  --ion-color-warning-rgb: 180, 83, 9;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-contrast-rgb: 255, 255, 255;
+  --ion-color-warning-shade: #9e4908;
+  --ion-color-warning-tint: #bc6422;
+
+  --ion-color-danger: #b91c1c;
+  --ion-color-danger-rgb: 185, 28, 28;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #a31919;
+  --ion-color-danger-tint: #c03333;
+
+  --ion-color-medium: #64748b;
+  --ion-color-medium-rgb: 100, 116, 139;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #58687a;
+  --ion-color-medium-tint: #748297;
+
+  --ion-color-light: #e8eef2;
+  --ion-color-light-rgb: 232, 238, 242;
+  --ion-color-light-contrast: #1f3347;
+  --ion-color-light-contrast-rgb: 31, 51, 71;
+  --ion-color-light-shade: #ccd1d5;
+  --ion-color-light-tint: #eaf0f3;
+
+  --ion-color-dark: #1a2836;
+  --ion-color-dark-rgb: 26, 40, 54;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #172330;
+  --ion-color-dark-tint: #313e4a;
+
+  /* Tokens de atmósfera atelier */
+  --atelier-ink: #1f3347;
+  --atelier-teal: #0f766e;
+  --atelier-champagne: #a67c52;
+  --atelier-mist: #e6ecf1;
+  --atelier-paper: #f7fafb;
+  --atelier-surface: #ffffff;
+  --atelier-border: rgba(31, 51, 71, 0.1);
+  --atelier-shadow: 0 4px 20px rgba(31, 51, 71, 0.07);
+  --atelier-radius: 14px;
+  --atelier-max-width: 480px;
+  --atelier-btn-height: 46px;
+
+  --ion-background-color: var(--atelier-mist);
+  --ion-toolbar-background: var(--atelier-ink);
+  --ion-toolbar-color: #ffffff;
+  --ion-card-background: var(--atelier-surface);
+  --ion-font-family: 'Outfit', 'Segoe UI', sans-serif;
+  --ion-text-color: var(--atelier-ink);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-ui: 'Outfit', 'Segoe UI', sans-serif;
+}
+
+/* Botones: primario filled vs secundario outline bien diferenciados */
+ion-button {
+  --border-radius: 10px;
+  --box-shadow: 0 2px 8px rgba(31, 51, 71, 0.14);
+  min-height: var(--atelier-btn-height);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  text-transform: none;
+  transition: transform 0.18s ease, opacity 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Primario (solid / default): peso visual fuerte */
+ion-button[fill='solid'],
+ion-button:not([fill]) {
+  --box-shadow: 0 3px 10px rgba(31, 51, 71, 0.22);
+}
+
+/* Secundario outline: borde visible, sin relleno dominante */
+ion-button[fill='outline'] {
+  --box-shadow: none;
+  --border-width: 2px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  ion-button {
+    cursor: pointer;
+  }
+
+  ion-button:hover {
+    opacity: 0.96;
+    transform: translateY(-1px);
+  }
+
+  ion-button[fill='outline']:hover {
+    opacity: 1;
+    --background: rgba(31, 51, 71, 0.04);
+  }
+
+  ion-button:active {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  ion-button {
+    --border-radius: 11px;
+    min-height: 48px;
+    font-size: 1rem;
+  }
+}
+
+ion-card {
+  border-radius: var(--atelier-radius);
+  box-shadow: var(--atelier-shadow);
+  border: 1px solid var(--atelier-border);
+}
+
+ion-card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--atelier-ink);
+}
+
+ion-toolbar ion-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}

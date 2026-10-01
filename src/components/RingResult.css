@@ -1,0 +1,150 @@
+/* Motion: aparición del resultado */
+@keyframes atelier-result-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ring-result {
+  margin: 1rem 0;
+  overflow: hidden;
+  animation: atelier-result-in 0.38s ease-out;
+  border-left: none;
+  border-top: 3px solid var(--atelier-ink);
+}
+
+.ring-result--exact {
+  border-top-color: var(--ion-color-success);
+  background:
+    linear-gradient(135deg, rgba(31, 122, 77, 0.06) 0%, transparent 55%),
+    var(--atelier-surface);
+}
+
+.ring-result--approx {
+  border-top-color: var(--ion-color-warning);
+  background:
+    linear-gradient(135deg, rgba(180, 83, 9, 0.07) 0%, transparent 55%),
+    var(--atelier-surface);
+}
+
+.ring-result__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.ring-result__header ion-card-title {
+  font-size: 1.2rem;
+}
+
+.ring-result--exact .ring-result__header ion-card-title {
+  color: var(--ion-color-success);
+}
+
+.ring-result--approx .ring-result__header ion-card-title {
+  color: var(--ion-color-warning);
+}
+
+.ring-result ion-badge {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+}
+
+.ring-result__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.ring-result__grid > div {
+  padding: 0.65rem 0.5rem;
+  text-align: center;
+  border-radius: 10px;
+  background: rgba(31, 51, 71, 0.04);
+  border: 1px solid transparent;
+}
+
+.ring-result--exact .ring-result__grid > div {
+  background: rgba(31, 122, 77, 0.08);
+  border-color: rgba(31, 122, 77, 0.12);
+}
+
+.ring-result--approx .ring-result__grid > div {
+  background: rgba(180, 83, 9, 0.08);
+  border-color: rgba(180, 83, 9, 0.12);
+}
+
+.ring-result__grid dt {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ion-color-medium);
+  margin-bottom: 0.25rem;
+}
+
+.ring-result__grid dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--atelier-ink);
+}
+
+.ring-result--exact .ring-result__grid dd {
+  color: var(--ion-color-success-shade);
+}
+
+.ring-result--approx .ring-result__grid dd {
+  color: var(--ion-color-warning-shade);
+}
+
+.ring-result__approx-note {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ion-color-medium);
+}
+
+.ring-result__approx-note strong {
+  color: var(--ion-color-warning);
+  font-weight: 600;
+}
+
+@media (max-width: 360px) {
+  .ring-result__grid dd {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .ring-result {
+    margin: 1.15rem 0;
+  }
+
+  .ring-result__header ion-card-title {
+    font-size: 1.28rem;
+  }
+
+  .ring-result__grid dd {
+    font-size: 1.45rem;
+  }
+
+  .ring-result__grid > div {
+    padding: 0.75rem 0.55rem;
+  }
+}

@@ -1,0 +1,98 @@
+.ring-table {
+  margin-top: 0.75rem;
+  overflow: hidden;
+}
+
+.ring-table ion-card-title {
+  font-size: 1.15rem;
+}
+
+.ring-table__scroll {
+  max-height: min(52vh, 420px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ring-table__head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 0.8fr;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--atelier-ink);
+  background: rgba(232, 238, 242, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--atelier-border);
+}
+
+.ring-table__list {
+  padding: 0;
+  background: transparent;
+}
+
+/* Zebra suave */
+.ring-table__list ion-item:nth-child(even) {
+  --background: rgba(31, 51, 71, 0.025);
+}
+
+.ring-table__list ion-item {
+  --padding-start: 1rem;
+  --inner-padding-end: 1rem;
+  --min-height: 44px;
+  font-family: var(--font-ui);
+  transition: background-color 0.2s ease;
+}
+
+.ring-table__row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 0.8fr;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  font-size: 0.92rem;
+}
+
+.ring-table__row strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--atelier-ink);
+}
+
+/* Highlight de talla activa más claro */
+.ring-table__row--active {
+  --background: rgba(15, 118, 110, 0.12) !important;
+  --border-color: var(--atelier-teal);
+  --inner-border-width: 0 0 0 3px;
+  box-shadow: inset 3px 0 0 var(--atelier-teal);
+}
+
+.ring-table__row--active strong {
+  color: var(--atelier-teal);
+  font-weight: 700;
+}
+
+.ring-table__row--active .ring-table__row {
+  font-weight: 600;
+}
+
+.ring-table__row--active ion-note {
+  color: var(--atelier-teal);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .ring-table__scroll {
+    max-height: min(48vh, 460px);
+  }
+
+  .ring-table__row {
+    font-size: 0.95rem;
+  }
+}
