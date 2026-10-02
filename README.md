@@ -76,6 +76,29 @@ npm run preview
 
 ---
 
+## Deploy web (Vercel)
+
+La app usa rutas client-side (`/` → redirect a `/home` con `IonReactRouter`). El archivo `vercel.json` reescribe las rutas SPA hacia `index.html` para que un refresh en `/home` no devuelva 404.
+
+En el dashboard de Vercel (Import Git Repository o nuevo proyecto):
+
+| Campo | Valor |
+|---|---|
+| **Framework Preset** | Vite |
+| **Install Command** | `npm install` |
+| **Build Command** | `npm run build` |
+| **Output Directory** | `dist` |
+
+Notas:
+
+- El `base` de Vite queda en `/` (raíz del dominio).
+- No hace falta subir `node_modules/`, `dist/` ni APKs; ya están en `.gitignore`.
+- La carpeta `android/` es del empaquetado Capacitor y **no** interviene en el deploy web; Vercel solo publica el contenido de `dist/`.
+
+Tras el deploy, comprobar que cargan `/` (redirige a home) y `/home` (también con F5 / refresh).
+
+---
+
 ## Scripts útiles (`package.json`)
 
 | Script | Comando | Descripción |
@@ -225,6 +248,7 @@ Parcial2/
 ├── capacitor.config.json    # appId, appName, webDir
 ├── index.html
 ├── package.json
+├── vercel.json              # Rewrites SPA para Vercel
 ├── vite.config.js
 └── README.md
 ```
